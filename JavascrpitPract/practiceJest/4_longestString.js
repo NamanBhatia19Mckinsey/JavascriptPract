@@ -1,4 +1,4 @@
-function longestString(input){
+function getlongestString(input){
     let maxLength=0;
     let output="";
     input.forEach(itr=> {
@@ -10,7 +10,7 @@ function longestString(input){
     });
     return output;
 }
-const longString=(input)=>{
+const getlongestString=(input)=>{
     let maxLength=0;
     let output="";
     input.forEach(itr=> {
@@ -26,4 +26,4 @@ console.log(longestString(["we", "love", "code", "academy"]));
 console.log(longString(["we", "love", "code", "academy"]));
 
 
-module.exports= {longString,longestString};
+module.exports= {getlongestString,getlongestString};

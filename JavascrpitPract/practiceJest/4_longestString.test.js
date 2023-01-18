@@ -1,4 +1,4 @@
-const {longString,longestString}=require('./4_longestString');
+const {getlongString,longestString}=require('./4_longestString');
 
 test('Find the longest string from array of strings',()=>{
     expect(
