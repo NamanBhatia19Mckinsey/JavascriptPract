@@ -1,11 +1,35 @@
-const {getBestScore}=require('./ballGame')
+const { getBestScore, getScore } = require('./ballGame.js');
 
-describe('Bowling Game Scorer', ()=>{
-    describe('Calculates score of a 10 frame bowling game', ()=>{
-        it('should provide score when number of frames is 10',()=>{
-            const result=getBestScore([10, 5, 5, 9, 0]);
-            expect(result).toEqual(48);
-        });
-        
+const games = [
+  [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10],
+  [6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+];
+describe('Ball Game for best core Evaluation', () => {
+  describe('Best score evaluator', () => {
+    it('Should throw an error if input is not a 2d array', () => {
+        expect(() => getBestScore('abc')).toThrow('2D Array not found');
+      });
+    it('Should return the best score when input is a 2d array of numbers', () => {
+      expect(getBestScore(games)).toBe(90);
     });
-})
+  });
+  describe('Ball Game for getting score evaluation', () => {
+    it('Should get the score of the game when input is a array of numbers', () => {
+      expect(getScore(games[0])).toBe(90);
+    });
+    it('Should get the score of the game when input is a array of numbers', () => {
+      expect(getScore(games[2])).toBe(16);
+    });
+    it('Should get the score of the game when input is a array of numbers', () => {
+      expect(getScore(games[1])).toBe(30);
+    });
+
+    it('Should throw an error when game is not a 10-frame game', () => {
+      expect(() => getScore([1, 2, 3, 5])).toThrow('Not a 10-frame game');
+    });
+    it('Should throw an error if input is not a 2d array', () => {
+      expect(() => getScore('abc')).toThrow('2D Array not found');
+    });
+  });
+});

@@ -37,5 +37,5 @@ const getScore = (Rolls) => {
     return scores;
 }
 
-console.log(getScore([10, 5, 5, 9, 0]));
-module.export = {getBestScore};
+console.log(getScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), getBestScore([[10, 5, 5, 9, 0], [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]]));
+module.exports = { getBestScore, getScore };
