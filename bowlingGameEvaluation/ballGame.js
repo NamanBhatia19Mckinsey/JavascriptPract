@@ -38,3 +38,4 @@ const getScore = (Rolls) => {
 }
 
 console.log(getScore([10, 5, 5, 9, 0]));
+module.export = {getBestScore};
